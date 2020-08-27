@@ -195,8 +195,9 @@ typedef struct STableDataBlocks {
 
 typedef struct SQueryInfo {
   int16_t          command;       // the command may be different for each subclause, so keep it seperately.
-  uint32_t         type;          // query/insert/import type
+  char             intervalTimeUnit;
   char             slidingTimeUnit;
+  uint32_t         type;          // query/insert/import type
   STimeWindow      window;
   int64_t          intervalTime;  // aggregation time interval
   int64_t          slidingTime;   // sliding window in mseconds
